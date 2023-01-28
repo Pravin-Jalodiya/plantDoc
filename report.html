@@ -29,6 +29,17 @@
         <!-- Left Part -->
         <div class="max-w-sm p-10 pl-0">
             <img id="original_img" src="images/damaged_leaf.jpg">
+            <!-- Supplement Details -->
+            <div class="mt-5 shadow_light p-5 rounded-xl bg-white">
+                <h2  class="text-[#7B7B7B] font-medium">Supplement Details</h2>
+                <div class="p-10">
+                <img id="supplement_image" src="https://rukminim1.flixcart.com/image/416/416/kc6jyq80/soil-manure/6/y/v/500-tapti-booster-500-ml-green-yantra-original-imaftd6rrgfhvshc.jpeg?q=70"/>
+                </div>
+                <p id="supplement_name" class="my-3 font-medium" >Supplement aa</p>
+                <a id="supplement_url" href="https://agribegri.com/?flag=3" target="_blank">
+                <button  class="bg-[#91D74F] px-8 py-2 rounded-lg font-medium hover:ring-4 ring-[#b5f27c]">Buy Now</button>
+                </a>
+            </div>
         </div>
         <!-- Right Part -->
         <div class="flex flex-col gap-3 w-3/6">
@@ -70,9 +81,14 @@
         set('name', data['title'])
         set('desc', data['desc'])
         set('prevention', data['prevent'])
+        set('supplement_name', data['sname'])
 
         //Set original image
         document.querySelector('#original_img').src = data['original_image']
+        //Set supplement image
+        document.querySelector('#supplement_image').src = data['simage']
+        //Set supplement buy link
+        document.querySelector('#supplement_url').href = data['buy_link']
 
     </script>
 </body>
