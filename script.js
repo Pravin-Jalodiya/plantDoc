@@ -79,22 +79,28 @@ const firebaseConfig = {
  .catch(console.error);
  }
 
- function post_image(url){
+function post_image(url){
   
   fetch('https://plant-doc2.onrender.com/submit',{
     method: 'POST',
     body: new FormData(document.querySelector('form'))
   }).then(res=>{
-      res.json().then(data=>{
+
+   
+      let res_data =  res.json()
+      res_data.then(data=>{
         console.log(data);
         // Redirect to report.html after getting result
         data['original_image'] = url
         window.localStorage.setItem('data', JSON.stringify(data))
         let query = new URLSearchParams(data).toString();
-        console.log(query);
         window.location.replace('/report.html')
-
       })
+      .catch(e=>{
+        window.location.replace('/invalid.html')
+      })
+  
+
     })
 
  }
