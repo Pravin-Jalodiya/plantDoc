@@ -1,0 +1,34 @@
+body{
+    background-image: url("images/bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: shrink 10s infinite alternate;
+}
+
+.main{
+    background: linear-gradient(90deg, #000000 10%, rgba(86, 86, 86, 0) 50%);
+    height: -webkit-fill-available;
+}
+
+.hero_text{
+    font-size: xx-large;
+    font-weight: 500;
+}
+
+input[type=file]{
+  display: none;
+}
+
+#preview_box{
+  display: none;
+}
+
+@keyframes shrink {
+  0% {
+    background-size: 150% 150%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
+}

@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="main flex justify-center md:p-5 flex-col md:flex-row">
+        <!-- Left part -->
+        <div class="flex items-center md:w-1/2 md:px-5 p-5">
+            <h3 class="hero_text text-3xl text-white"><em>Early detection, early prevention</em><br>
+                Protect your plants with our disease detection website.</h3>
+        </div>
+
+        <!-- Right part -->
+        <div class="flex items-center">
+            <!-- Card -->
+            <div class="bg-white rounded-xl flex items-center flex-col p-8 gap-5 items-center justify-center">
+                <!-- Logo -->
+                <img src="images/logo.svg" alt="logo" class="h-14">
+                <!-- File Upload Box -->
+                <div id="upload_box" class="flex flex-col items-center bg-slate-100 hover:bg-slate-200 rounded-xl p-10 border-2 border-slate-500 border-dashed gap-7">
+                    <img src="images/plant_icon.png" class="w-32">
+                    <p>Please upload the image of the leaf</p>
+                    <button  onclick="handle_browse_click()" class="bg-[#91D74F] px-8 py-2 rounded-lg font-medium hover:ring-4 ring-[#b5f27c]">Browse files</button>
+                    <form action="https://plant-doc2.onrender.com/submit" method="POST" enctype="multipart/form-data">
+                    <input type="file" accept="image/*" name="image">
+                    </form>
+                </div>
+                <!-- File Preview Box -->
+                <div id="preview_box">
+                    <div class="flex flex-col max-w-md items-center bg-slate-100 hover:bg-slate-200 rounded-xl p-10 border-2 border-slate-500  gap-7">
+                        <img class="max-h-60" id="preview_image" src="images/plant_icon.png" class="w-full">
+                    </div>
+                    <!-- Options Bar -->
+                    <div class="p-5 space-x-3 flex justify-end">
+                        <button onclick="toggle_view()">Reupload image</button>
+                        <button id="upload_image_btn" onclick="uploadImage()" class="bg-[#91D74F] px-8 py-2 rounded-lg font-medium hover:ring-4 ring-[#b5f27c]">Scan Leaf</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
