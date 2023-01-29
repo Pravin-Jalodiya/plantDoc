@@ -63,7 +63,9 @@
             <!-- Detail Box -->
             <div class="shadow_light p-5 rounded-xl bg-white">
                 <h2  class="text-[#7B7B7B] font-medium">Name of the disease</h2>
-                <p id="name" class="font-semibold mt-3">Leaf Blight Isariopsis Leaf Spot</p>
+                <p id="name" class="font-semibold mt-3">Leaf Blight Isariopsis Leaf Spot </p>
+                <br>
+                <a id="youtube_link" class="text-blue-500" href="/" target="_blank">▶ Watch videos</a>
             </div>
 
             <div class="shadow_light p-5 rounded-xl bg-white">
@@ -116,6 +118,9 @@
         document.querySelector('#supplement_image').src = data['simage']
         //Set supplement buy link
         document.querySelector('#supplement_url').href = data['buy_link']
+
+        // Set youtube link
+        document.querySelector('#youtube_link').href = 'https://www.youtube.com/results?search_query='+data['title']
 
     </script>
 </body>
