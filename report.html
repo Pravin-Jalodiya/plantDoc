@@ -34,12 +34,17 @@
         iframe{
         display: none !important;
         }
+
+
     </style>
 </head>
 <body>
-    <nav class="flex items-center py-8 px-10 gap-3">
-        <img onclick="navigate_home()" class="w-8 cursor-pointer" src="images/back_arrow.svg">
-        <h1 class="text-3xl">Disease Report</h1>
+    <nav class="flex items-center py-8 px-10 gap-3 min-w-fit">
+        <img onclick="navigate_home()" class="print:hidden w-8 cursor-pointer" src="images/back_arrow.svg">
+        <h1 class="text-3xl min-w-fit">Disease Report</h1>
+        <button  onclick="download_report()" class="print:hidden min-w-fit bg-[#91D74F] px-4 py-2 text-sm rounded-lg font-medium hover:ring-4 ring-[#b5f27c]">Download Report</button>
+        <div class="w-full"></div>
+        <img class="w-32" src="images/logo.svg">
     </nav>
     <!-- Body -->
     <div class="flex justify-between px-14 flex-col md:flex-row">
@@ -54,7 +59,7 @@
                 </div>
                 <p id="supplement_name" class="my-3 font-medium" >Supplement aa</p>
                 <a id="supplement_url" href="https://agribegri.com/?flag=3" target="_blank">
-                <button  class="bg-[#91D74F] px-8 py-2 rounded-lg font-medium hover:ring-4 ring-[#b5f27c]">Buy Now</button>
+                <button  class="print:hidden bg-[#91D74F] px-8 py-2 rounded-lg font-medium hover:ring-4 ring-[#b5f27c]">Buy Now</button>
                 </a>
             </div>
         </div>
@@ -65,7 +70,7 @@
                 <h2  class="text-[#7B7B7B] font-medium">Name of the disease</h2>
                 <p id="name" class="font-semibold mt-3">Leaf Blight Isariopsis Leaf Spot </p>
                 <br>
-                <a id="youtube_link" class="text-blue-500" href="/" target="_blank">▶ Watch videos</a>
+                <a id="youtube_link" class="print:hidden text-blue-500" href="/" target="_blank">▶ Watch videos</a>
             </div>
 
             <div class="shadow_light p-5 rounded-xl bg-white">
@@ -83,7 +88,7 @@
             </div>
 
             <!-- Google translate button -->
-            <div id="google_translate_element"></div>
+            <div class="print:hidden" id="google_translate_element"></div>
             <!-- Google translate script -->
             <script type="text/javascript">
                 function googleTranslateElementInit() {
@@ -121,6 +126,12 @@
 
         // Set youtube link
         document.querySelector('#youtube_link').href = 'https://www.youtube.com/results?search_query='+data['title']
+
+        // Print page
+
+        function download_report(){
+            window.print()
+        }
 
     </script>
 </body>
