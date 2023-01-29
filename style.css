@@ -4,6 +4,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     animation: shrink 10s infinite alternate;
+    top: 0 !important;
 }
 
 .main{
@@ -38,6 +39,9 @@ input[type=file]{
   color: black;
 }
 
+iframe{
+  display: none !important;
+}
 
 @keyframes shrink {
   0% {
