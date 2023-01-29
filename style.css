@@ -24,6 +24,21 @@ input[type=file]{
   display: none;
 }
 
+/* Google Translate */
+
+#google_translate_element > div > span{
+  display: none;
+}
+
+#google_translate_element > div{
+  color: white;
+}
+
+#google_translate_element select{
+  color: black;
+}
+
+
 @keyframes shrink {
   0% {
     background-size: 150% 150%;

@@ -22,12 +22,22 @@
             </div>
             <h3 class="hero_text text-3xl text-white"><em>Early detection, early prevention</em><br>
                 Protect your plants with our disease detection website.</h3>
+            
+            <!-- Google translate script -->
+            <script type="text/javascript">
+                function googleTranslateElementInit() {
+                  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                }
+            </script>
+            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
         </div>
 
         <!-- Right part -->
         <div class="flex items-center">
             <!-- Card -->
-            <div class="bg-white rounded-xl flex items-center flex-col p-8 gap-5 items-center justify-center">
+            <div class="bg-white rounded-xl flex items-center flex-col p-8 gap-5 items-center justify-center pb-3">
                 <!-- Logo -->
                 <img src="images/logo.svg" alt="logo" class="h-14">
                 <!-- File Upload Box -->
@@ -51,11 +61,14 @@
                     </div>
                     
                 </div>
+                <!-- Google translate button -->
+                <div id="google_translate_element"></div>
             </div>
         </div>
     </div>
     <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
     <script src="script.js"></script>
+
 </body>
 </html>
