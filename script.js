@@ -81,12 +81,11 @@ const firebaseConfig = {
 
 function post_image(url){
   
-  fetch('https://plant-doc2.onrender.com/submit',{
+  fetch('',{
     method: 'POST',
     body: new FormData(document.querySelector('form'))
   }).then(res=>{
 
-   
       let res_data =  res.json()
       res_data.then(data=>{
         console.log(data);
@@ -104,3 +103,4 @@ function post_image(url){
     })
 
  }
+
